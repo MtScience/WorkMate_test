@@ -2,7 +2,6 @@ import sys
 
 from src.cmdline_options import extract_cmdline_options, verify_options
 from src.exam_results import read_exam_data
-
 from src.reports import Reporter
 
 

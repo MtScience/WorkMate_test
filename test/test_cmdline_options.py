@@ -1,6 +1,5 @@
-from importlib.metadata import requires
-
 import pytest as pt
+
 from src.cmdline_options import extract_cmdline_options, verify_options
 
 missing_args = [
@@ -15,6 +14,7 @@ invalid_args = [
     ("--files /test/test_data.csv --report mood".split(), "unknown report type"),
 ]
 
+
 @pt.mark.parametrize(
     "args,required",
     missing_args
@@ -22,7 +22,7 @@ invalid_args = [
 def test_missing_options(args, required):
     with pt.raises(SystemExit) as exc:
         extract_cmdline_options(args)
-        assert f"the following arguments are required: {requires}" in exc.value
+        assert f"the following arguments are required: {required}" in exc.value
 
 
 @pt.mark.parametrize(

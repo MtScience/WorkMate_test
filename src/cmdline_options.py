@@ -1,5 +1,6 @@
-import sys
 import argparse as ap
+import sys
+
 from pathlib import Path
 
 

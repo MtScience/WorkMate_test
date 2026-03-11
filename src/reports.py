@@ -1,7 +1,8 @@
 import statistics
+
 from itertools import groupby
-from typing import Iterable
 from tabulate import tabulate
+from typing import Iterable
 
 from src.exam_results import ExamResult
 

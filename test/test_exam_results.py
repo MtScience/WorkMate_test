@@ -1,10 +1,9 @@
 import csv
 import datetime
 import pytest as pt
-from src.exam_results import ExamResult, read_exam_data
+
 from pathlib import Path
-
-
+from src.exam_results import ExamResult, read_exam_data
 
 invalid_result_data = [
     ({"student": "John Doe"}, KeyError),

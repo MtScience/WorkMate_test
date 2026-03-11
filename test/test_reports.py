@@ -4,7 +4,6 @@ import pytest as pt
 from src.exam_results import ExamResult
 from src.reports import Reporter
 
-
 exam_data = [
     ExamResult(
         student="John Doe",
@@ -25,6 +24,7 @@ exam_data = [
         coffee_spent=700
     )
 ]
+
 
 @pt.fixture
 def reporter():

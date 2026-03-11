@@ -1,5 +1,6 @@
 import csv
 import datetime as dt
+
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Self, Iterable
