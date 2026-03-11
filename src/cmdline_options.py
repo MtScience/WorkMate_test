@@ -3,7 +3,7 @@ import argparse as ap
 from pathlib import Path
 
 
-def extract_cmdline_options() -> ap.Namespace:
+def extract_cmdline_options(args=None) -> ap.Namespace:
     parser: ap.ArgumentParser = ap.ArgumentParser()
     parser.add_argument("--files",
                         action="extend",
@@ -16,7 +16,7 @@ def extract_cmdline_options() -> ap.Namespace:
                         required=True,
                         help="the type of report to generate")
 
-    return parser.parse_args()
+    return parser.parse_args(args)
 
 
 def verify_options(allowed_types: list[str], options: ap.Namespace) -> None:
@@ -24,9 +24,9 @@ def verify_options(allowed_types: list[str], options: ap.Namespace) -> None:
     # not be the better way, depending on the actual project).
     for file in options.files:
         if not file.exists():
-            sys.exit(f"Error: file '{file.path}' could not be found.")
+            sys.exit(f"Error: file '{file.name}' could not be found.")
         if not file.is_file():
-            sys.exit(f"Error: '{file.path}' is not a file.")
+            sys.exit(f"Error: '{file.name}' is not a file.")
 
     # In an actual project this could be implemented by using the 'choices' argument
     # for 'ArgumentParser.add_argument'. I wrote it the way I did for error consistency.
