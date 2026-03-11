@@ -12,7 +12,7 @@ allowed_types = ["median-coffee"]
 invalid_args = [
     ("--files test.csv --report median-coffee".split(), "could not be found"),
     ("--files /home --report median-coffee".split(), "is not a file"),
-    ("--files math.csv --report mood".split(), "unknown report type"),
+    ("--files /test/test_data.csv --report mood".split(), "unknown report type"),
 ]
 
 @pt.mark.parametrize(
