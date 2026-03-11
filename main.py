@@ -1,6 +1,7 @@
-from cmdline_options import extract_cmdline_options, verify_options
-from exam_results import read_exam_data
-from reports import Reporter
+from src.cmdline_options import extract_cmdline_options, verify_options
+from src.exam_results import read_exam_data
+
+from src.reports import Reporter
 
 
 def main() -> None:
@@ -12,5 +13,5 @@ def main() -> None:
     reporter.generate_report(options.report, exam_data)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
